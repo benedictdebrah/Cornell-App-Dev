@@ -1,0 +1,9 @@
+[project]
+name = "cornell-app-dev"
+version = "0.1.0"
+description = "Project directory for the Cornell App Development Club ( Intro to Backend Development Assignments )"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.6",
+]
