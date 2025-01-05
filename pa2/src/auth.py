@@ -63,7 +63,6 @@ def create_user(db: Session, user: UserCreate):
     
     hashed_password = get_password_hash(user.password)
     
-    # Create the user, excluding the password from the user.dict() to avoid duplication
     db_user = User(
         name=user.name,
         username=user.username,
@@ -74,7 +73,3 @@ def create_user(db: Session, user: UserCreate):
     db.commit()
     db.refresh(db_user)
     return db_user
-
-print(f"SECRET_KEY: {SECRET_KEY}")
-print(f"ALGORITHM: {ALGORITHM}")
-print(f"ACCESS_TOKEN_EXPIRE_MINUTES: {ACCESS_TOKEN_EXPIRE_MINUTES}")
