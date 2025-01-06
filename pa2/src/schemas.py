@@ -11,8 +11,13 @@ class UserCreate(UserBase):
 
 class UserResponse(UserBase):
     id: int
-    name: str
 
     class Config:
         orm_mode = True
 
+class UserLogin(BaseModel):
+    username: str
+    password: str
+
+    class config:
+        orm_mode = True
